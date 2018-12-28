@@ -18,7 +18,10 @@ $("#losses").text(losses);
 let anArrayOfUniqueNumbers = [];
 let numberGenerator = function(arr) {
   if (arr.length >= 4) return;
-  let newNumber = Math.floor(Math.random() * 15 + 1);
+  var min=1; 
+    var max=12;  
+    var newNumber = Math.floor(Math.random() * (+max - +min)) + +min; 
+   
   if (arr.indexOf(newNumber) < 0) {
     arr.push(newNumber);
   }
@@ -29,8 +32,8 @@ console.log(anArrayOfUniqueNumbers);
 
 //function to generate random target number//
 function randomNumber(){
-    var min=50; 
-    var max=100;  
+    var min=19; 
+    var max=120;  
     var random =Math.floor(Math.random() * (+max - +min)) + +min; 
     randomNumbo = random;
     $("#random-number").text(randomNumbo);
