@@ -1,0 +1,42 @@
+body {
+    background-color: #bb9ec9;
+    color: #b453cc;
+    margin:auto;
+}
+h1 {
+    font-family: 'Iceberg', cursive;
+    text-align:center;
+    font-size: 100px;
+    
+    padding: 0px 0px 20px 0px;
+
+}
+#instructions {
+    text-align:center;
+    
+}
+.jumbotron {
+    padding: 0px 0px 20px 0px;
+    line-height:50%;
+}
+#gameInfo {
+    background: #ebebeb;
+    height:150px;
+    font-size:20px;
+}
+
+.crystal-images{
+   height:200px;
+   width:200px;
+}
+
+/*not working*/
+.winslosses{
+ text-align: center !important;
+}
+
+#random-number, #your-number{
+    font-size:80px;
+    font-family: 'Iceberg', cursive;
+    padding: 20px;
+}

@@ -1,0 +1,80 @@
+<DOCtype html>
+<html>
+<head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+        <link rel = "stylesheet" href ="assets/css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Iceberg" rel="stylesheet">
+</head>
+<body>
+    <div class = "container">
+    <div class= "jumbotron">
+    <h1>Crystal Game</h1>
+    <div id = "instructions">
+        <p>You are given a random number to match at the start of the game.</p>
+        <p>There are four crystals below, by clicking a crystal you will add a specific amount of points to your total score.</p>
+        <p>Win the game by matching your total score to the random number given.</p>
+        <p>The value of each crystal is hidden from you until you click on it</p>
+        <p>When the game restarts a new random number appears and the values for each crystal changes.</p>
+    
+    </div>
+    </div>
+    </div>
+    <div class="container">
+        <div class="row">
+                <div id="crystal1" class="col-lg-3 col-md-3 col-sm-3 ">
+                    <img src="assets/images/crystal1.png" class="crystal-images">
+                </div>
+                <div id="crystal2" class="col-lg-3 col-md-3 col-sm-3 ">
+                    <img src="assets/images/crystal2.png" class= "crystal-images">
+                </div>
+                <div id="crystal3" class="col-lg-3 col-md-3 col-sm-3 ">
+                    <img src="assets/images/crystal3.png" class="crystal-images">
+                </div>
+                <div id="crystal4" class="col-lg-3 col-md-3 col-sm-3 ">
+                    <img src="assets/images/crystal4.png" class= "crystal-images">
+                     </div>
+         </div>
+       
+        <br>
+        <div class="row" id="gameInfo">
+         <div class="col-lg-4 col-md-4 col-sm-4">
+             Number to Match:
+             <div class="row">
+                <span id="random-number">?</span></div>   
+         </div>
+         <div class="col-lg-4 col-md-4 col-sm-4">
+                <div class="row">
+                   <p>Wins:</p> 
+                </div>
+                <br>
+                <div class="row">
+                   <p>Losses:</p>
+                    </div>
+            </div>
+         <div class="col-lg-4 col-md-4 col-sm-4">
+                Your Number:
+                <div class="row">
+                <span id="your-number">0</span>
+            </div>
+            </div>
+
+            </div>
+
+    </div>
+        
+            
+        
+
+
+
+
+
+<!-- script codes-->
+        <script src = "assets/javascript/game.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+<!--script codes-->
+</body>
+</html>
