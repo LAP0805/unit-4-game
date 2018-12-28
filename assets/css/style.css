@@ -40,3 +40,6 @@ h1 {
     font-family: 'Iceberg', cursive;
     padding: 20px;
 }
+#wins, #losses{
+    padding:0px 0px 0px 10px;
+}

@@ -2,7 +2,12 @@ var yourScore = 0;
 var randomNumbo = 0;
 var wins= 0;
 var losses = 0;
-
+var crystalArray = [];
+var cr1 = $("#crystal1");
+var cr2 = $("#crystal2");
+var cr3 = $("#crystal3");
+var cr4 = $("#crystal4");
+crystalArray.push(cr1,cr2,cr3,cr4);
 
 $("#your-number").text(yourScore);
 $("#random-number").text(randomNumbo);
@@ -19,50 +24,24 @@ function randomNumber(){
     $("#random-number").text(randomNumbo);
    
 }
-//function to set random number for each crystal//
+//function to set random number for each crystal and push to youScore when clicked.
 function randomCrystal(){
-var crystalArray = [];
-var cr1 = $("#crystal1");
-var cr2 = $("#crystal2");
-var cr3 = $("#crystal3");
-var cr4 = $("#crystal4");
-crystalArray.push(cr1,cr2,cr3,cr4);
 crystalArray.forEach(function(crystal){
     var min=1; 
     var max=15;  
     var random =Math.floor(Math.random() * (+max - +min)) + +min; 
    crystal.attr("data-number", random);
+   crystal.on("click", function(){
+    var go = crystal.data("number");
+yourScore = yourScore + go;
+  $("#your-number").text(yourScore);
+  winLose()
 });
-
-console.log(crystalArray);
+});
 };
 
-//function to add data number to score when crystal clicked
 
-$("#crystal1").on("click", function(){
-    var go = $("#crystal1").data("number");
- yourScore = yourScore + go;
- $("#your-number").text(yourScore);
- winLose()
-});
-$("#crystal2").on("click", function(){
-    var go = $("#crystal2").data("number");
- yourScore = yourScore + go;
- $("#your-number").text(yourScore);
- winLose()
-});
-$("#crystal3").on("click", function(){
-    var go = $("#crystal3").data("number");
- yourScore = yourScore + go;
- $("#your-number").text(yourScore);
- winLose()
-});
-$("#crystal4").on("click", function(){
-    var go = $("#crystal4").data("number");
- yourScore = yourScore + go;
- $("#your-number").text(yourScore);
- winLose()
-});
+
 
 
 //function for win or lose
