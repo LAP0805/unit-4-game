@@ -16,27 +16,50 @@ $("#losses").text(losses);
 
 //function to generate random target number//
 function randomNumber(){
-    var min=50; 
-    var max=100;  
+    var min=19; 
+    var max=120;  
     var random =Math.floor(Math.random() * (+max - +min)) + +min; 
     console.log(random);
     randomNumbo = random;
     $("#random-number").text(randomNumbo);
    
 }
-//function to set random number for each crystal and push to yourScore when clicked.
-function randomCrystal(){
-crystalArray.forEach(function(crystal){
-    var min=1; 
-    var max=15;  
-    var newR =Math.floor(Math.random() * (+max - +min)) + +min; 
-   crystal.attr("data-number", newR);
+//function to set random number for each crystal 
+// function randomCrystal(){
+// crystalArray.forEach(function(crystal){
+//     var min=1; 
+//     var max=15;  
+//     var newR =Math.floor(Math.random() * (+max - +min)) + +min; 
+//    crystal.attr("data-number", newR);
    
-});
+// });
 
+// };
+
+let anArrayOfUniqueNumbers = [];
+let numberGenerator = function(arr) {
+  if (arr.length >= 4) return;
+  var min=1; 
+    var max=12;  
+    var newNumber = Math.floor(Math.random() * (+max - +min)) + +min; 
+   
+  if (arr.indexOf(newNumber) < 0) {
+    arr.push(newNumber);
+  }
+  numberGenerator(arr);
+};
+numberGenerator(anArrayOfUniqueNumbers);
+console.log(anArrayOfUniqueNumbers);
+
+function randomCrystal(){
+crystalArray.forEach(function(crystal,i){
+  var random = anArrayOfUniqueNumbers[i]; 
+crystal.attr("data-number", random);
+
+});
 };
 
-
+//on click push to score
   $(".crystal-class").on("click", function(){
       var dataNumber = ($(this).attr("data-number")); 
       var newDataNumber = parseInt(dataNumber);
@@ -72,8 +95,12 @@ else if(you > me){
 
 //function to reset game 
 function resetGame(){
+  anArrayOfUniqueNumbers = [];
+numberGenerator(anArrayOfUniqueNumbers)
+console.log(anArrayOfUniqueNumbers);
  yourScore = 0;
  $("#your-number").text(yourScore);
+ 
  randomNumber();
  randomCrystal();
 
